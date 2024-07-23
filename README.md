@@ -52,6 +52,7 @@ I broke down the problem statement into following parts:
 
 ## Results
 * Shoe2 original pcd
+  
 ![Alt text](images/shoe2_pcd_after_cleaning.png)
 
 * Shoe2 pcd with floor detected and represented in red
@@ -59,9 +60,11 @@ I broke down the problem statement into following parts:
 ![Alt text](images/Shoe2_floor_detection.png)
 
 * Shoe2 re-oriented and centered at origin pcd
+
 ![Alt text](images/shoe2_rotated_and_translated.png)
 
 * Shoe2 poisson surface reconstruction
+
 ![Alt text](images/Shoe2_pcd.png)
 
 
