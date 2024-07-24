@@ -67,5 +67,66 @@ I broke down the problem statement into the following parts:
 
 ![Alt text](images/Shoe2_pcd.png)
 
+## Observations on what can be improved
+
+1. we can play around with parameters of the outlier detection algorithm for more clearer point cloud. This should vary depending on the scene.
+2. I have observered in few scenes like chair, lamp, plant by decreasing the std_ratio we are able to get a less noisy point clould and surface reconstruction.
+
+  Stool after re-oriented with std_ratio=0.5
+
+  ![Alt text](images/stool_std_0.5.png)
+
+  Stool after re-oriented with std_ratio=2
+
+  ![Alt text](images/stool_std_2.png)
+
+3. Similar improvement has been observed by increasing the number of neighbours.
+
+  Stool after surface reconstruction with nb_neighbours=5 in remove_statistical_outlier function
+
+  ![Alt text](images/lamp_nb_neighbours_5.png)
+
+  Stool after re-oriented with nb_neighbours100 in remove_statistical_outlier function
+
+  ![Alt text](images/lamp_nb_neighbours_100.png)
+
+
+4. For more accurate plane detection we can play around with distance_threshold and ransac_n parameters
+5. I have observed that if I reduce the distance_threshold I was able to get more precise floor plane detection
+
+  Vase floor detection with distance_threshold=0.05
+
+  ![Alt text](images/vase_dist_thres_0.05.png)
+
+  Vase floor detection with distance_threshold=0.02
+
+  ![Alt text](images/vase_dist_thres_0.02.png)
+
+
+6. We an also increase depth parameter of surface reconstrcution to algo for more detailed surface reconstrcution.
+
+  plant surface renconstruction with depth=4
+
+  ![Alt text](images/plant_depth_4.png)
+
+  plant surface reconstruction with depth=9
+
+  ![Alt text](images/plant_depth_9.png)
+
+
+7. we can also increase the density_threshold to clean up the mesh.
+
+  plant surface renconstruction with density_threshold=0.09
+
+  ![Alt text](images/plant_density_thres_0.09.png)
+
+  plant surface renconstruction with density_threshold=0.01
+    
+  ![Alt text](images/plant_depth_9.png)
+
+  plant surface renconstruction with density_threshold=0
+ 
+  ![Alt text](images/plant_density_threshold_0.png)
+
 
 

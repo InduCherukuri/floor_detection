@@ -15,13 +15,13 @@ def rodrigues_rotation_matrix(axis, angle):
 
 def detect_floor_and_re_orient_pcd(original_pcd, voxel_size=0.01, nb_neighbors=20, std_ratio=2.0, radius=0.1, max_nn=30, distance_threshold=0.02, ransac_n=3, num_iterations=1000):
 
-    # Downsample the point cloud
+    # # # Downsample the point cloud
     pcd = original_pcd.voxel_down_sample(voxel_size=voxel_size)
-
-    # Remove outliers
+    # pcd = original_pcd
+    # # Remove outliers
     cl, ind = pcd.remove_statistical_outlier(nb_neighbors=nb_neighbors, std_ratio=std_ratio)
     clean_pcd = pcd.select_by_index(ind)
-
+    # clean_pcd=pcd
     o3d.visualization.draw_geometries([clean_pcd], window_name="Cleaned Point Cloud")
 
     # Estimate normals
@@ -105,6 +105,7 @@ if __name__=="__main__":
     for pcd_path in point_cloud_paths:
 
         # Load the point cloud
+        # pcd_path="/Users/indu.cherukuri/Desktop/PC_reorient/floor_detection/pcs/lamp_pc.ply"
         original_pcd = o3d.io.read_point_cloud(pcd_path)
         # Vsualizing the original point cloud
         o3d.visualization.draw_geometries([original_pcd], window_name="Original Point Cloud")
@@ -115,3 +116,4 @@ if __name__=="__main__":
 
         # Smoothen the scene representation using poisson surface reconstruction
         surface_reconstruction(updated_pcd)
+        break
