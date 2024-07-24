@@ -15,7 +15,7 @@ pip install open3d numpy
 
 ## Detailed Approach
 
-I broke down the problem statement into the following parts:
+##### I broke down the problem statement into the following parts:
 
 1. Detect the floor in any given point cloud
 2. Translate the center of the floor to lie on the origin
@@ -24,7 +24,7 @@ I broke down the problem statement into the following parts:
 5. Run the unit test to check the correctness of the above method.
 
 
-###### Preprocessing the point cloud:
+##### Preprocessing the point cloud:
 1. Downsample the point cloud for faster algorithmic execution.
 2. Now remove the outliers so our next steps are more accurate.
 
